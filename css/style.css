@@ -11,7 +11,10 @@ img {
   padding-top: 15px;
   padding-bottom: 15px;
   }
-
+.qdiv{
+  background: rgb(54, 25, 25); /* Fall-back for browsers that don't support rgba */
+  background: rgba(221, 221, 221, 0.5);
+  }
 .qdiv h2{
   text-align: center;
 }
@@ -19,8 +22,12 @@ img {
 
 .answers li{
   list-style: none;
+  padding: 1.2em; 0 1.2em 0;
 }
 .answers li:hover{
   list-style-image: url(../img/vball-hover.png);
+}
 
+#feedback{
+  padding:1.2em 0 1.2em .8em;
 }
