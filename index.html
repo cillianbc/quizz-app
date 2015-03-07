@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Volleyball Quizz</title>
   <!-- Latest jquery-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>§x
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <!-- Latest bootstrap.css -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
@@ -41,21 +41,26 @@
       <div class="qdiv"><h2>Q1. Question is here</h2>
         <form>
          <ul class="answers">
-           <li><input type="radio" name="choice" value="choice1"><span class="choice"> Choice 1</span></li><br>
-          <li><input type="radio" name="choice" value="choice2"><span class="choice"> Choice 2</span></li><br>
-          <li><input type="radio" name="choice" value="choice3"><span class="choice"> Choice 3</span></li><br>
-          <li><input type="radio" name="choice" value="choice4"><span class="choice"> Choice 4</span></li><br>
+          <li><label><input type="radio" name="choice" value="choice1"><span class="choice"> Choice 1</span></label></li>
+          <li><label><input type="radio" name="choice" value="choice2"><span class="choice"> Choice 2</span></label></li>
+          <li><label><input type="radio" name="choice" value="choice3"><span class="choice"> Choice 3</span></label></li>
+          <li><label><input type="radio" name="choice" value="choice4"><span class="choice"> Choice 4</span></label></li>
         </ul>
+        <input class="btn btn-success" type="submit" value="Submit Answer">
         </form>
-        <p>answer indicator goes here</p>
+        <h3 id="feedback">answer indicator goes here</h3>
       </div>
       </div>
       <div class="col-md-2">
       <img src="img/player-right.png" alt="Volleyball player" class="img-responsive">
-      <div class="first">I will be a question count graphic</div>
+      <div id="progressbar"></div>
       </div>
     </div>
   </div>
-
+<script>
+$( "#progressbar" ).progressbar({
+  value: 37
+});
+</script>
 </body>
 </html>
