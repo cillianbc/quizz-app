@@ -1,0 +1,26 @@
+img {
+  max-width: 100%;
+}
+.main{
+  padding-top: 15px;
+}
+.title{
+  text-align: center;}
+
+.header{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  }
+
+.qdiv h2{
+  text-align: center;
+}
+
+
+.answers li{
+  list-style: none;
+}
+.answers li:hover{
+  list-style-image: url(../img/vball-hover.png);
+
+}

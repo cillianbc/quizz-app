@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Volleyball Quizz</title>
+  <!-- Latest jquery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>§x
   <!-- Latest bootstrap.css -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
@@ -13,8 +15,7 @@
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-  <!-- Latest jquery-->
-  <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
 
   <!-- custom javascript -->
   <script src="js/app.js"></script>
@@ -23,25 +24,38 @@
   <div class="container">
     <div class="row header">
       <div class="col-md-2">
-        logo go here
+        <img src="img/cillianbc-Logo@2x.png" class="img-responsive" alt="Responsive image">
       </div>
       <div class="col-md-8">
-        Quizz title go here
+        <h1 class="title">Volleyball Quizz</h1>
       </div>
       <div class="col-md-2">
       </div>
     </div>
     <div class="row main">
       <div class="col-md-2">
-        empty col
+        <img src="img/player-left.png" alt="Volleyball player" class="img-responsive">
       </div>
       <div class="col-md-8 main-quizz">
-        quizz goes here
+        <img src="img/vball-bg.png" alt="Volleyball court background" class="img-responsive">
+      <div class="qdiv"><h2>Q1. Question is here</h2>
+        <form>
+         <ul class="answers">
+           <li><input type="radio" name="choice" value="choice1"><span class="choice"> Choice 1</span></li><br>
+          <li><input type="radio" name="choice" value="choice2"><span class="choice"> Choice 2</span></li><br>
+          <li><input type="radio" name="choice" value="choice3"><span class="choice"> Choice 3</span></li><br>
+          <li><input type="radio" name="choice" value="choice4"><span class="choice"> Choice 4</span></li><br>
+        </ul>
+        </form>
+        <p>answer indicator goes here</p>
+      </div>
       </div>
       <div class="col-md-2">
-      empty col
+      <img src="img/player-right.png" alt="Volleyball player" class="img-responsive">
+      <div class="first">I will be a question count graphic</div>
       </div>
     </div>
   </div>
+
 </body>
 </html>
