@@ -31,3 +31,13 @@ img {
 #feedback{
   padding:1.2em 0 1.2em .8em;
 }
+#retry_button{
+	font-size: 18px;
+	margin-top: 20px;
+	border-radius: 5px;
+	display: none;
+}
+
+.question{
+  font-size: 1.4em;
+}

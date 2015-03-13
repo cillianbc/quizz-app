@@ -39,22 +39,27 @@
       </div>
       <div class="col-md-8 main-quizz">
         <img src="img/vball-bg.png" alt="Volleyball court background" class="img-responsive">
-      <div class="qdiv"><h2>Q1. Question is here</h2>
-        <form>
-         <ul class="answers">
-          <li><label><input type="radio" name="choice" value="choice1"><span class="choice"> Choice 1</span></label></li>
-          <li><label><input type="radio" name="choice" value="choice2"><span class="choice"> Choice 2</span></label></li>
-          <li><label><input type="radio" name="choice" value="choice3"><span class="choice"> Choice 3</span></label></li>
-          <li><label><input type="radio" name="choice" value="choice4"><span class="choice"> Choice 4</span></label></li>
-        </ul>
-        <input class="btn btn-success" type="submit" value="Submit Answer">
-        </form>
-        <h3 id="feedback">answer indicator goes here</h3>
-      </div>
+        <div id="question_wrapper">
+          <span class="question">Question #1: A regulation volleyball game is played to ____ points, but you must win by 2 points.</span><br>
+		  <div id="answer_holder">
+            <ul class="answers">
+              <li><input type="radio" name="option" class="option" value="0"><span class="answer"> 11</span><br></li>
+              <li><input type="radio" name="option" class="option" value="1"><span class="answer"> 21</span><br></li>
+              <li><input type="radio" name="option" class="option" value="2"><span class="answer"> 15</span><br></li>
+              <li><input type="radio" name="option" class="option" value="3"><span class="answer"> 25</span><br></li>
+            </ul>
+          </div>
+          <div id="button_holder">
+            <input type="button" id="submit" value="Submit Answer"><span id="hint"></span>
+            <input type="button" id="retry_button" value="Try Again!">
+          </div>
+        <div id="fact"><span id="last_fact"></span>
+		</div>
+        </div>
       </div>
       <div class="col-md-2">
-      <img src="img/player-right.png" alt="Volleyball player" class="img-responsive">
-      <div id="progress">0% complete</div>
+        <img src="img/player-right.png" alt="Volleyball player" class="img-responsive">
+        <div id="progress">0%</div>
       </div>
     </div>
   </div>
