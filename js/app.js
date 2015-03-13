@@ -25,12 +25,16 @@ $(document).ready(function() {
     correct:0
   }
 ]
-var newQuestion = function(){
-  return '<span class="question">'+questions[currentQuestion].question+'</span><br><div id="answer_holder"><ul class="answers"><li><input type="radio" name="option" class="option" value="0"><span class="answer">'+" "+questions[currentQuestion].choices[0]+'</span><br></li><li><input type="radio" name="option" class="option" value="1"><span class="answer">'+" "+questions[currentQuestion].choices[1]+'</span><br></li><li><input type="radio" name="option" class="option" value="2"><span class="answer">'+" "+questions[currentQuestion].choices[2]+'</span><br></li><li><input type="radio" name="option" class="option" value="3"><span class="answer">'+" "+questions[currentQuestion].choices[3]+'</span><br></div><div id="button_holder"><input type="button" id="submit" value="Submit Answer"><span id="hint"></span><input type="button" id="retry_button" value="Try Again!"></div>';
+
+  var numberCorrect = 0;
+  var currentQuestion = 0;
+
+
+  var newQuestion = function(){
+    return '<span class="question">'+questions[currentQuestion].question+'</span><br><div id="answer_holder"><ul class="answers"><li><input type="radio" name="option" class="option" value="0"><span class="answer">'+" "+questions[currentQuestion].choices[0]+'</span><br></li><li><input type="radio" name="option" class="option" value="1"><span class="answer">'+" "+questions[currentQuestion].choices[1]+'</span><br></li><li><input type="radio" name="option" class="option" value="2"><span class="answer">'+" "+questions[currentQuestion].choices[2]+'</span><br></li><li><input type="radio" name="option" class="option" value="3"><span class="answer">'+" "+questions[currentQuestion].choices[3]+'</span><br></div><div id="button_holder"><input type="button" id="submit" value="Submit Answer"><span id="hint"></span><input type="button" id="retry_button" value="Try Again!"></div>';
 };
 
-var numberCorrect = 0;
-  var currentQuestion = 0;
+
   $("#question_wrapper").on("click", "#submit", function () {
     progress();
     currentQuestion++;
@@ -47,48 +51,48 @@ var numberCorrect = 0;
 
 
 
-var progress = function(){
-  var answer = $("input[type='radio']:checked").val();
-  if (answer == questions[currentQuestion].correct){
-    numberCorrect ++;
+  var progress = function(){
+    var answer = $("input[type='radio']:checked").val();
+    if (answer == questions[currentQuestion].correct){
+      numberCorrect ++;
   }
-  if (numberCorrect == 1) {
-    $("#progress").html("<span class='progress'>25%</span>");
+    if (numberCorrect == 1) {
+      $("#progress").html("<span class='progress'>25%</span>");
   }
-  else if (numberCorrect == 2) {
-    $("#progress").html("<span class='progress'>50%</span>");
+    else if (numberCorrect == 2) {
+      $("#progress").html("<span class='progress'>50%</span>");
   }
-  else if (numberCorrect == 3) {
-    $("#progress").html("<span class='progress'>75%</span>");
+    else if (numberCorrect == 3) {
+      $("#progress").html("<span class='progress'>75%</span>");
   }
-  else if (numberCorrect == 4) {
-    $("#progress").html("<span class='progress'>100%</span>");
+    else if (numberCorrect == 4) {
+      $("#progress").html("<span class='progress'>100%</span>");
   }
 };
 
-function nextQuestion(){
-  if (currentQuestion < 4){
-    $(".question").remove();
-    $("#answer_holder input").remove();
-    $("#answer_holder span").remove();
-    $("#fact").hide();
-    $("#question_wrapper").html(newQuestion(currentQuestion));
-    $("#fact_holder").addClass("fact").html(questions[currentQuestion-1].fact);
+  function nextQuestion(){
+    if (currentQuestion < 4){
+      $(".question").remove();
+      $("#answer_holder input").remove();
+      $("#answer_holder span").remove();
+      $("#fact").hide();
+      $("#question_wrapper").html(newQuestion(currentQuestion));
+      $("#fact_holder").addClass("fact").html(questions[currentQuestion-1].fact);
       }
-  else {
-    $(".question").remove();
-    $("#answer_holder input").remove();
-    $("#answer_holder span").remove();
-    $("#submit").css("display", "none");
-    $("#retry_button").css("display", "inline");
-    $("#fact_holder").addClass("fact").html(questions[currentQuestion-1].fact);
-      if (numberCorrect == 1) {
-        var finalScore = '<span id="final">Congratulations on finishing the quiz!  You correctly answered '+numberCorrect+' question.'
-        $("#answer_holder").html(finalScore);
-        }
-      else {
-        var finalScore = '<span>Congratulations on finishing the quiz!  You correctly answered '+numberCorrect+'questions. Enjoy this video <iframe width="560" height="315" src="https://www.youtube.com/embed/BV2We41j1nU" frameborder="0" allowfullscreen></iframe></span>'
-        $("#answer_holder").addClass("final").html(finalScore);
+    else {
+      $(".question").remove();
+      $("#answer_holder input").remove();
+      $("#answer_holder span").remove();
+      $("#submit").css("display", "none");
+      $("#retry_button").css("display", "inline");
+      $("#fact_holder").addClass("fact").html(questions[currentQuestion-1].fact);
+    if (numberCorrect == 1) {
+      var finalScore = '<span id="final">Congratulations on finishing the quiz!  You correctly answered '+numberCorrect+' question.'
+      $("#answer_holder").html(finalScore);
+      }
+    else {
+      var finalScore = '<span>Congratulations on finishing the quiz!  You correctly answered '+numberCorrect+'questions. Enjoy this video <iframe width="560" height="315" src="https://www.youtube.com/embed/BV2We41j1nU" frameborder="0" allowfullscreen></iframe></span>'
+      $("#answer_holder").addClass("final").html(finalScore);
           }
       };
   };
